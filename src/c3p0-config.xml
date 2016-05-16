@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+	<named-config name="crawler">
+		<property name="user">yz</property>
+		<property name="password">youyou</property>
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/crawler</property>
+		<property name="initialPoolSize">20</property>
+		<property name="maxIdleTime">500</property>
+		<property name="maxPoolSize">50</property>
+		<property name="minPoolSize">10</property>
+		<property name="idleConnectionTestPeriod">60</property> 
+	</named-config>
+</c3p0-config>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+   <!-- reload properties-->
+   <stackoverflow>
+     <!-- Can't change the first value,if you do so the crawler will get repeat request -->
+     <pages>200200:200000</pages>
+     <order>1</order>
+   </stackoverflow>
+   
+   <sleeptime>
+     <sleep>2:3</sleep>
+   </sleeptime>
+</properties>
+
