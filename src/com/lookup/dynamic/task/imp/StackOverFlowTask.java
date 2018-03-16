@@ -51,18 +51,18 @@ public class StackOverFlowTask extends SingleTask {
 			stackOverFlowActor.tell(request, ActorRef.noSender()); 
 			// 睡眠策略：每一页休息20-40秒；每64页再休息8-10分钟；每256页再休息8-10分钟
 			i++; 
-			SleepUtil.sleep(vo.getSleepFirst(), vo.getSleepSecond());
+			SleepUtil.sleepBySecond(vo.getSleepFirst(), vo.getSleepSecond());
 			
-			if (i > 0 && i % 64 == 0) {
+			/*if (i > 0 && i % 64 == 0) {
 				System.out.println("------------sleeping for 8-10 minute------------");
-				SleepUtil.sleep(8 * 60, 10 * 60);
+				SleepUtil.sleepByMinute(8, 10);
 				index += 1;
 			}
 			if (i > 0 && i % 256 == 0) {
 				System.out.println("------------sleeping for 8-10 minute------------");
-				SleepUtil.sleep(8 * 60, 10 * 60);
+				SleepUtil.sleepByMinute(8, 10);
 				index += 1;
-			}
+			}*/
 
 			// 重置参数
 			ReloadValue.reSetPages();

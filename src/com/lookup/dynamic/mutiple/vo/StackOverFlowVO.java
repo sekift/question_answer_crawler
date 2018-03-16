@@ -1,5 +1,7 @@
 package com.lookup.dynamic.mutiple.vo;
 
+import java.util.Date;
+
 /**
  * @author 作者:sekift 
  * @author E-mail:sekiftlyz@gmail.com
@@ -16,7 +18,8 @@ public class StackOverFlowVO {
     private String answerSecondContent;//`answerSecondContent` varchar(2560) DEFAULT NULL COMMENT '第二条回答内容',
     private int answerSecondVote;//`answerSecondVote` int(10) DEFAULT NULL COMMENT '第二条回答投票',
 	private String tag;//`tag` varchar(50) DEFAULT NULL COMMENT '标签',
-    private String questionTime;//`questionTime` datetime DEFAULT NULL COMMENT '提问时间',
+	private Date createTime; //插入时间
+	private String questionTime;//`questionTime` datetime DEFAULT NULL COMMENT '提问时间',
     private int status;//`status` tinyint(4) DEFAULT NULL COMMENT '状态；1 使用，0 无用',
     private String more;//`more` varchar(128) DEFAULT NULL COMMENT '备用字段',
     private String website;//`website` varchar(50) DEFAULT 'www.stackoverflow.com/questions/' COMMENT 'website',
@@ -68,6 +71,12 @@ public class StackOverFlowVO {
 	}
 	public void setAnswerSecondVote(int answerSecondVote) {
 		this.answerSecondVote = answerSecondVote;
+	}
+    public Date getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
 	}
 	public String getTag() {
 		return tag;

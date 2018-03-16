@@ -18,7 +18,7 @@ public class TaskRequest {
 
     private Long crawlerId;               //抓取任务的ID
 
-    private int maxReTryNum = 10;     //最大失败次数 50
+    private int maxReTryNum = 3;     //最大失败次数 50
 
     private AtomicInteger currentTryNum = new AtomicInteger();   // 当前重试次数
 

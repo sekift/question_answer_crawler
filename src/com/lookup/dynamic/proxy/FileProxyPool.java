@@ -24,6 +24,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 import com.google.common.io.LineProcessor;
+import com.lookup.dynamic.Constants;
 
 /**
  * Pooled Proxy Object
@@ -40,7 +41,7 @@ public class FileProxyPool implements ProxyPool {
     private final static BlockingQueue<Proxy> proxyQueue = new DelayQueue<Proxy>();
     private final static Map<String, Proxy> allProxy = new ConcurrentHashMap<String, Proxy>();
 
-    private final static String proxyFilePath = "/www/client/crawler/config";
+    //private final static String proxyFilePath = "/www/client/crawler/config";
     private final static String proxyFileName = "proxy.txt";
 
     private final static int reuseInterval = 1500;// ms
@@ -71,7 +72,8 @@ public class FileProxyPool implements ProxyPool {
     }
 
     public FileProxyPool() {
-        //  initProxy();
+    	// 不启动
+        //initProxy();
     }
 
     public void addProxy(Proxy proxy) {
@@ -107,7 +109,7 @@ public class FileProxyPool implements ProxyPool {
         //  List<String> proxyList = mysqlServiceMapper.getProxyList("");
         //  addProxy(proxyList);
         // 读取文件方式
-        String testFilePath = proxyFilePath + File.separatorChar + proxyFileName;
+        String testFilePath = Constants.proxyFilePath + File.separatorChar + proxyFileName;
         File testFile = new File(testFilePath);
         CounterLine counter = new CounterLine();
         try {

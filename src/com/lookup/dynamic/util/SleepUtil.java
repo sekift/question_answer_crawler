@@ -1,5 +1,6 @@
 package com.lookup.dynamic.util;
 
+
 /**
  * @author 作者:sekift
  * @author E-mail:sekiftlyz@gmail.com
@@ -7,12 +8,42 @@ package com.lookup.dynamic.util;
  */
 public class SleepUtil {
 	/**
+	 * 睡眠，时间单位为d,两个数min、max不论顺序
+	 * 
+	 * @param min
+	 * @param max
+	 */
+	public static void sleepByDay(int min, int max) {
+		SleepUtil.sleepBySecond(min * 24 * 60 * 60, max * 24 * 60 * 60);
+	}
+	
+	/**
+	 * 睡眠，时间单位为h,两个数min、max不论顺序
+	 * 
+	 * @param min
+	 * @param max
+	 */
+	public static void sleepByHour(int min, int max) {
+		SleepUtil.sleepBySecond(min * 60 * 60, max * 60 * 60);
+	}
+	
+	/**
+	 * 睡眠，时间单位为m,两个数min、max不论顺序
+	 * 
+	 * @param min
+	 * @param max
+	 */
+	public static void sleepByMinute(int min, int max) {
+		SleepUtil.sleepBySecond(min * 60, max * 60);
+	}
+	
+	/**
 	 * 睡眠，时间单位为s,两个数min、max不论顺序
 	 * 
 	 * @param min
 	 * @param max
 	 */
-	public static void sleep(int min, int max) {
+	public static void sleepBySecond(int min, int max) {
 		try {
 			//由于不必准确，故使用左移（1024）
 			Thread.sleep(randomInt(min, max)<<10);

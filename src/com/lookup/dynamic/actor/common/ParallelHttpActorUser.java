@@ -44,7 +44,7 @@ public class ParallelHttpActorUser extends BaseActor {
                 request.setDiscard(true);
             }
             int deLaytime = request.getDelayTime();
-            SleepUtil.sleep(deLaytime, deLaytime+1);
+            SleepUtil.sleepBySecond(deLaytime, deLaytime+1);
             
 //            logger.info(request.toString());
             TaskRequestMeta requestMeta = request.getRequestMeta();
@@ -62,6 +62,7 @@ public class ParallelHttpActorUser extends BaseActor {
                     responseMeta = OkHttpTool.httpPost(requestMeta.getUrl(), userAgent, false, null, 0, requestMeta.getHeaders(), requestMeta.getCookies(), requestMeta.getParams(), requestMeta.getEncoding());
                 }
                 if (responseMeta != null) {
+//                	System.out.println("responseMeta==="+responseMeta);
                     if (responseMeta.getStatusCode() == 200) {
                         if (responseMeta.getBody().indexOf(requestMeta.getSuccessTag()) != -1) {
                             TaskResponse response = new TaskResponse();

@@ -13,6 +13,7 @@ import com.lookup.dynamic.config.imp.ClientConfigService;
 public class ReloadValue {
 	private static TaskVO vo = new TaskVO();
 
+	//会有多线程问题
 	public static TaskVO getTaskVO() {
 		return vo;
 	}

@@ -3,11 +3,12 @@
    <!-- reload properties-->
    <stackoverflow>
      <!-- Can't change the first value,if you do so the crawler will get repeat request -->
-     <pages>68842:60000</pages>
+     <pages>200200:200000</pages>
      <order>1</order>
    </stackoverflow>
    
    <sleeptime>
-     <sleep>70:80</sleep>
+     <sleep>2:3</sleep>
    </sleeptime>
 </properties>
+

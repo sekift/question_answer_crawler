@@ -19,6 +19,7 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.io.Files;
 import com.google.common.io.LineProcessor;
+import com.lookup.dynamic.Constants;
 
 /**
  * Created by Administrator on 2015/8/14 0014.
@@ -26,7 +27,8 @@ import com.google.common.io.LineProcessor;
 public class UserAgentPool {
 
     private final static Multimap<String, String> userAgentMultimap = ArrayListMultimap.create();
-    private final static String userAgentsPath = "/www/client/crawler/config";
+    //private final static String userAgentsPath = "/www/client/crawler/config";
+    private final static String userAgentsPath = Constants.userAgentsPath;
     private final static String clientUserAgentsFileName = "clientUA.txt";
     private final static String mobileUserAgentsFileName = "mobileUA.txt";
 

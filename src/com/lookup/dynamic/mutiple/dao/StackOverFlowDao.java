@@ -19,10 +19,10 @@ public class StackOverFlowDao {
 	public boolean save(StackOverFlowVO vo){
 		StringBuilder sql=new StringBuilder();
 		sql.append("INSERT INTO stackoverflow(id,title,questionContent,questionVote,answerFirstContent," +
-				"answerFirstVote,answerSecondContent,answerSecondVote,tag,questionTime,status,more,website)" +
-				" VALUES(?,?,?,?,?,?,?,?,?,?,1,?,'www.stackoverflow.com/questions/')");
+				"answerFirstVote,answerSecondContent,answerSecondVote,tag,createTime,questionTime,status,more,website)" +
+				" VALUES(?,?,?,?,?,?,?,?,?,now(),?,1,?,'www.stackoverflow.com/questions/')");
 		sql.append(" on duplicate key update title=?,questionContent=?,questionVote=?,answerFirstContent=?");
-		sql.append(",answerFirstVote=?,answerSecondContent=?,answerSecondVote=?,tag=?");
+		sql.append(",answerFirstVote=?,answerSecondContent=?,answerSecondVote=?,tag=?,createTime=now()");
 		boolean result=DBUtil.updateQuietly(sql.toString(), 
 				vo.getId(),
 				vo.getTitle(),

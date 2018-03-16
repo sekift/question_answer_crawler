@@ -18,13 +18,20 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 
 		PropertyConfigurator.configure("config/log4j.properties");
-		context = new ClassPathXmlApplicationContext(
-				"applicationContext-main.xml");
+		context = new ClassPathXmlApplicationContext("applicationContext-main.xml");
 
-		StackOverFlowTask task = (StackOverFlowTask) context
-				.getBean("stackOverFlowTask");
+		StackOverFlowTask task = (StackOverFlowTask) context.getBean("stackOverFlowTask");
 		task.execute();
-		System.out.println("over");
-		System.exit(0);
+
+//		ZhidxTask zhidxTask = (ZhidxTask) context.getBean("zhidxTask");
+//		zhidxTask.execute();
+//		
+//		GeekparkTask geekparkTask = (GeekparkTask) context.getBean("geekparkTask");
+//		geekparkTask.execute();
+		
+//		GoodListTask goodListTask = (GoodListTask) context.getBean("goodListTask");
+//		goodListTask.execute();
+
+		// System.exit(0);
 	}
 }

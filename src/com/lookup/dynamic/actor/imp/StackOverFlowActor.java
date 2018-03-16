@@ -88,16 +88,16 @@ public class StackOverFlowActor extends BaseActor {
                 Elements elements = doc.getElementsByClass("question-hyperlink");
 				for (Element e : elements) {
 					String href = e.attributes().get("href");
-					if (!href.contains("stackoverflow.com/")) {//过滤掉不是title的项，避免脏数据
+					if (!href.contains("stackoverflow.com/") && !href.contains("stackoverflow.blog/")) {//过滤掉不是title的项，避免脏数据
 						String currentUrl = "http://stackoverflow.com" + href;
 						TaskRequest request = new TaskRequest();
 						TaskRequestMeta requestMetaPage = response.getRequestMeta().clone();
 						requestMetaPage.setUrl(currentUrl);
 						request.setRequestMeta(requestMetaPage);
+						// logger.info("当前请求的页面 " + currentUrl);
 						parallelHttpActorUser.tell(request, self());
-
 						// 防止请求过快 ，配置延迟/s
-						request.setDelayTime(2);
+						request.setDelayTime(13);
 					}
 				}
     		}
